@@ -1,0 +1,28 @@
+name: CI Test
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run test (simulate failure)
+        run: |
+          echo "Running test..."
+          exit 1
+      - name: Slack Notify (on fail)
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"❌ *CI Failed!* PR #${{ github.event.number }} on `${{ github.repository }}`."}' \
+          https://hooks.slack.com/services/你的/webhook/網址
