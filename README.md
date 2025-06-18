@@ -1,8 +1,18 @@
-# Java Personal Profile
+# Personal Website
 
-This simple Java application prints out a software engineer's profile information.
+This project contains a simple static website and a Java program that prints a personal profile.
 
-## Building and Running
+## Viewing the Website
+
+Open `index.html` in a web browser or serve the folder locally:
+
+```bash
+python3 -m http.server
+```
+
+Then visit `http://localhost:8000`.
+
+## Running the Java Program
 
 Compile and run using `javac` and `java`:
 
