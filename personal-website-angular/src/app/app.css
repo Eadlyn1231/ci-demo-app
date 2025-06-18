@@ -1,13 +1,14 @@
 nav {
   display: flex;
   gap: 1rem;
-  background: #f0f0f0;
+  background: var(--primary-color);
   padding: 0.5rem;
 }
-a {
+nav a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
-a.active {
+nav a.active {
   font-weight: bold;
+  text-decoration: underline;
 }
