@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fadeAnimation } from '../../animations';
+import { fadeAnimation, slideInAnimation } from '../../animations';
 
 @Component({
   selector: 'app-skills',
@@ -7,8 +7,8 @@ import { fadeAnimation } from '../../animations';
   imports: [],
   templateUrl: './skills.html',
   styleUrl: './skills.css',
-  animations: [fadeAnimation],
-  host: { '[@fadeAnimation]': '' }
+  animations: [fadeAnimation, slideInAnimation],
+  host: { '[@fadeAnimation]': '', '[@slideInAnimation]': '' }
 })
 export class Skills {
 

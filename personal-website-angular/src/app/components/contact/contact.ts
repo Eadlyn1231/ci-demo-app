@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fadeAnimation } from '../../animations';
+import { fadeAnimation, slideInAnimation } from '../../animations';
 
 @Component({
   selector: 'app-contact',
@@ -7,8 +7,8 @@ import { fadeAnimation } from '../../animations';
   imports: [],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
-  animations: [fadeAnimation],
-  host: { '[@fadeAnimation]': '' }
+  animations: [fadeAnimation, slideInAnimation],
+  host: { '[@fadeAnimation]': '', '[@slideInAnimation]': '' }
 })
 export class Contact {
 
